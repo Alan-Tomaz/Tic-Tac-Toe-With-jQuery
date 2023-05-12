@@ -1,0 +1,103 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.game-title {
+    font-size: 48px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.input {
+    margin-top: 1rem;
+    width: 80%;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .1rem;
+    flex-direction: column;
+}
+
+.game-stage {
+    width: 100%;
+}
+
+.game-stage>.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: 1rem;
+}
+
+.game-stage>.row>.box {
+
+    width: fit-content;
+}
+
+.grid-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: fit-content;
+}
+
+.tic-tac-toe-grid {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+}
+
+#tic-tac-toe-grid-1,
+#tic-tac-toe-grid-2,
+#tic-tac-toe-grid-3 {
+    border-top: none;
+}
+
+#tic-tac-toe-grid-1,
+#tic-tac-toe-grid-4,
+#tic-tac-toe-grid-7 {
+    border-left: none;
+}
+
+#tic-tac-toe-grid-3,
+#tic-tac-toe-grid-6,
+#tic-tac-toe-grid-9 {
+    border-right: none;
+}
+
+#tic-tac-toe-grid-7,
+#tic-tac-toe-grid-8,
+#tic-tac-toe-grid-9 {
+    border-bottom: none;
+}
+
+@media screen and (max-width: 576px) {
+
+    .game-stage>.row {
+        gap: 0;
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box-img {
+        order: 1;
+        margin-bottom: 1rem;
+    }
+
+    .tic-tac-toe-grid {
+        order: 0;
+        max-height: 100px;
+        max-width: 100px;
+    }
+
+}
