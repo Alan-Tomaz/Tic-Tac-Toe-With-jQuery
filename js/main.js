@@ -80,10 +80,10 @@
                     var score = 0;
 
                     if ((round % 2) == 1) {
-                        icon = "url(img/marcacao_1.png)";
+                        icon = "url(../img/marcacao_1.png)";
                         score = -1;
                     } else {
-                        icon = "url(img/marcacao_2.png)";
+                        icon = "url(../img/marcacao_2.png)";
                         score = 1;
                     }
 
