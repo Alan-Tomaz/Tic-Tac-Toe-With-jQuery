@@ -1,20 +1,53 @@
 body {
     height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
 
+.container {
+    overflow: hidden;
+}
+
+.alert-box {
+    position: absolute;
+    top: -200px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 90%;
+    transition: .3s;
+}
+
+.alert-message {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.alert-box-show {
+    top: 35px;
+}
+
 .game-title {
     font-size: 48px;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     text-align: center;
+}
+
+.initial-page-hide {
+    transition: .3s;
+    opacity: 0;
 }
 
 .input {
     margin-top: 1rem;
     width: 80%;
+}
+
+#btn-start-game:hover {
+    opacity: .9;
+    cursor: pointer;
 }
 
 .box {
@@ -27,6 +60,13 @@ body {
 
 .game-stage {
     width: 100%;
+    display: none;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.game-stage-show {
+    opacity: 1;
 }
 
 .game-stage>.row {
@@ -39,7 +79,6 @@ body {
 }
 
 .game-stage>.row>.box {
-
     width: fit-content;
 }
 
@@ -56,31 +95,48 @@ body {
     border: 1px solid black;
 }
 
-#tic-tac-toe-grid-1,
-#tic-tac-toe-grid-2,
-#tic-tac-toe-grid-3 {
+.tic-tac-toe-grid:hover {
+    cursor: pointer;
+}
+
+#a-1,
+#a-2,
+#a-3 {
     border-top: none;
 }
 
-#tic-tac-toe-grid-1,
-#tic-tac-toe-grid-4,
-#tic-tac-toe-grid-7 {
+#a-1,
+#b-1,
+#c-1 {
     border-left: none;
 }
 
-#tic-tac-toe-grid-3,
-#tic-tac-toe-grid-6,
-#tic-tac-toe-grid-9 {
+#a-3,
+#b-3,
+#c-3 {
     border-right: none;
 }
 
-#tic-tac-toe-grid-7,
-#tic-tac-toe-grid-8,
-#tic-tac-toe-grid-9 {
+#c-1,
+#c-2,
+#c-3 {
     border-bottom: none;
 }
 
+.nickname {
+    margin: 1rem 0 0 0;
+    font-size: 1.4rem;
+}
+
+.button {
+    margin: 3rem 0;
+}
+
 @media screen and (max-width: 576px) {
+    body {
+        overflow-y: auto;
+        height: 100%;
+    }
 
     .game-stage>.row {
         gap: 0;
@@ -96,8 +152,12 @@ body {
 
     .tic-tac-toe-grid {
         order: 0;
-        max-height: 100px;
-        max-width: 100px;
+        max-height: 85px;
+        max-width: 85px;
+    }
+
+    .img {
+        max-width: 75%;
     }
 
 }
